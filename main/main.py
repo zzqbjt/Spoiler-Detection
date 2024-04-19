@@ -148,11 +148,11 @@ class Trainer:
 
 def main():
     trainer=Trainer()
-    trainer.train()
+    # trainer.train()
     trainer.test(trainer.test_loader)
     if trainer.accelerator.is_local_main_process:
         model = trainer.accelerator.unwrap_model(trainer.model)
-        torch.save(model.state_dict(), './final_models/ft+up+GAT3View+MoE2+Transformer.pth')
+        torch.save(model.state_dict(), './final_models/ft+up+GAT3View+MoE2+Transformer5.pth')
     
 if __name__ == "__main__":
     setup_seed(42)
